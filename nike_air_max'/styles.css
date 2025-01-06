@@ -1,0 +1,471 @@
+* {
+    font-family: 'Barlow', sans-serif;    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    background-attachment: fixed; /* Fix the image to the background */
+    top: 0; /* Position it at the top */
+    left: 0; /* Position it at the left */
+    width: 100%; /* Full width of the screen */
+    height: 100%; /* Full height of the screen */
+    padding-top: 80px;
+    background-image: url('img/bg.png'); /* Background image URL */
+    background-size: cover; /* Make sure the image covers the entire screen */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Ensure the background doesn't repeat */
+    z-index: -1; /* Send the background behind other elements */
+}
+
+header {
+    color: whitesmoke;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fixed position to keep it at the top */
+    top: 0; /* Align the header to the top of the page */
+    left: 0;
+    width: 100%; /* Full width of the page */
+    z-index: 1000; /* Ensure it's above other content */
+    
+    backdrop-filter: blur(10px); /* Apply the blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+}
+
+/* Logo Styling */
+.logo {
+    position: absolute; /* Absolute positioning to place it at the left */
+    left: 20px; /* Align the logo to the left of the header */
+    font-size: 1.8rem; /* Font size of the logo */
+    font-weight: bold; /* Bold logo */
+}
+
+.logo img{
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+}
+
+
+nav ul {
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0 ;
+    display: flex;
+    max-width: 800px;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #8f8e8e;
+}
+
+nav ul li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: rgb(245, 245, 245);
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Stack logo and navigation on smaller screens */
+        text-align: center;
+    }
+
+    .stripe {
+        width: 100%; /* Make the stripe take full width on small screens */
+        height: auto;
+    }
+}
+
+
+.About {
+    background-color: #333; /* Dark background for contrast */
+    color: aliceblue;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 400px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    text-align: center;
+    font-family: 'Barlow', sans-serif; /* Clean font */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.About h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #546966; /* Vibrant color for the title */
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+.About h4 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ace1ec; /* Light color for subheading */
+    margin-bottom: 15px;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+.About p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+    font-weight: 300; /* Lighter text weight for description */
+}
+
+/* Price styling */
+.About p:first-of-type {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ace1ec; /* Price in a bold, vibrant color */
+}
+
+/* Hover effect for text */
+.About h1:hover, .About h4:hover {
+    color: #f7f7f7; /* Slightly lighter color when hovered */
+    cursor: pointer;
+}
+
+/* Add a small animation to the paragraph text */
+.About p {
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: aliceblue;
+    background: #1e1e1e; /* Dark background */
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* About Section Styling */
+  .About {
+    max-width: 400px;
+    z-index: 2; /* Ensure it layers above blurry shapes */
+  }
+  
+  .About h1 {
+    font-size: 4rem;
+    margin: 0;
+  }
+  
+  .About h4 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .About p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 5px 0;
+  }
+  
+  
+  /* Updated Shoe Image Styles */
+  .shoe-image {
+      position: absolute;
+      width: 300px;
+      transform: translateY(100%) rotate(-30deg); /* Start from below */
+      top: 45%;
+      right: 20%;
+      z-index: 3;
+      transition: transform 1s ease-out, opacity 1s ease-out;
+      
+    }
+    /* Keyframe for bottom-to-top animation */
+  @keyframes slideFromBottom {
+      0% {
+        transform: translateY(100%) rotate(-30deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0) rotate(-30deg);
+        opacity: 1;
+      }
+    }
+  /* After the animation, keep the image in its final position */
+.shoe-image {
+    animation-fill-mode: forwards;
+  }
+  
+  /* Shadow */
+  .shadow {
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    border-radius: 50%;
+    bottom: 15%;
+    right: 20%;
+    z-index: 1; /* Below the shoe image */
+    animation: slideFromBottom 1.5s ease-in-out forwards;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 500px) {
+    .About {
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+    .shoe-image {
+      width: 0;
+      top: 50%;
+      right: 15%;
+    }
+  
+    .shadow {
+      width: 0;
+      height: 0;
+      bottom: 0;
+    }
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+video {
+    width: 100%;
+    height: 100vh;
+}
+
+button {
+    background-color: #1d1d1d; /* Dark background color */
+    color: white; /* White text */
+    font-size: 16px; /* Font size */
+    padding: 12px 24px; /* Padding for top/bottom and left/right */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+}
+
+button:hover {
+    background-color: #3e3e3e; /* Lighter background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button:active {
+    transform: scale(1); /* Reset to original size when clicked */
+}
+
+
+
+.dark-mode {
+    --background-light: #121212;
+    --text-light: #804040;
+}
+
+.container1 {
+    /* background: #fff; */
+    background: linear-gradient(to right, #2e3030, #515559);
+
+    width: 500px;
+    padding: 1.5rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
+}
+
+form {
+    margin: 0 2rem;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+input, textarea {
+    color: inherit;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #757575;
+    padding-left: 1.5rem;
+    font-size: 15px;
+    color: #333;
+}
+
+.input-group {
+    padding: 1% 0;
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    color: black;
+}
+
+input:focus, textarea:focus {
+    background-color: transparent;
+    outline: transparent;
+    border-bottom: 2px solid rgb(125, 125, 235);
+    transition: all 0.3s ease-in-out;
+}
+
+input::placeholder, textarea::placeholder {
+    color: transparent;
+}
+
+label {
+    color: #757575;
+    position: relative;
+    left: 1.2em;
+    top: -1.3em;
+    cursor: auto;
+    transition: 0.5s ease all;
+}
+
+input:focus~label,
+input:not(:placeholder-shown)~label,
+textarea:focus~label {
+    top: -2.7em;
+    color: rgb(125, 125, 235);
+    font-size: 15px;
+}
+
+.recover {
+    text-align: right;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recover a {
+    text-decoration: none;
+    color: rgb(125, 125, 235);
+}
+
+.recover a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.btn {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: rgb(125, 125, 235);
+    color: white;
+    cursor: pointer;
+    transition: 0.9s;
+}
+
+.btn:hover {
+    background-color: #07001f;
+}
+
+.or {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.icons {
+    text-align: center;
+}
+
+.icons i {
+    color: rgb(125, 125, 235);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 2px solid #dfe9f5;
+    margin: 0 15px;
+    transition: 0.9s;
+}
+
+.icons i:hover {
+    background: #07001f;
+    border: 2px solid rgb(125, 125, 235);
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 4rem;
+    margin-top: 0.9rem;
+    font-weight: bold;
+}
+
+button {
+    color: rgb(125, 125, 235);
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-right: 50px;
+}
+
+button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
