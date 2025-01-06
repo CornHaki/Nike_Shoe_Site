@@ -76,7 +76,7 @@ This project is licensed under the MIT License. Feel free to use and modify it a
 
 For any questions or suggestions, reach out to:
 - **GitHub**: [CornHaki](https://github.com/CornHaki)
-- **Email**: [YourEmail@example.com](mailto:YourEmail@example.com)
+- **Email**: [Dimpal Baishya](mailto:baishyadimpal31@gmail.com)
 
 ---
 
